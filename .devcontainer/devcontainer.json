@@ -1,4 +1,16 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {}
+  "name": "ARM Embedded & QEMU",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "marus25.cortex-debug"
+      ]
+    }
+  },
+  "postCreateCommand": "arm-none-eabi-gcc --version && qemu-system-arm --version"
 }
